@@ -5,3 +5,4 @@ from backend import views
 router = DefaultRouter()
 router.register(r'filmovi', views.FilmViewSet, basename='film')
 urlpatterns = router.urls
+

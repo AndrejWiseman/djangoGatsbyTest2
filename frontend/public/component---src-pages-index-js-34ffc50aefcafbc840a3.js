@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_hello_world=self.webpackChunkgatsby_starter_hello_world||[]).push([[678],{558:function(e,t,l){l.r(t),l.d(t,{default:function(){return n}});var a=l(294);function n(){return a.createElement("main",null,a.createElement("div",{className:"tekst"},a.createElement("h1",null,"Novi Django + Gatsby Tutorial")))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-34ffc50aefcafbc840a3.js.map

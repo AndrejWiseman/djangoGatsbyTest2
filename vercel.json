@@ -1,6 +1,6 @@
 {
     "builds": [{
-        "src": "djangoGatsby1/wsgi.py",
+        "src": "djangoGatsbyTest2/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     },
@@ -20,7 +20,7 @@
 
         {
             "src": "/(.*)",
-            "dest": "djangoGatsby1/wsgi.py"
+            "dest": "djangoGatsbyTest2/wsgi.py"
         }
     ],
     "outputDirectory": "staticfiles"

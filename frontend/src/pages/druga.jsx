@@ -1,22 +1,22 @@
-import * as React from "react"
+import React from 'react'
 
 import '../assets/css/main.scss'
+import DugmeBox from "../components/DugmeBox";
 
-import DugmeBox from '../components/DugmeBox'
 
 
-export default function Home() {
-  return(
-      <main>
+const Druga = () => {
+    return(
+        <main>
         <div className="tekst">
-            <h1>Novi Django + Gatsby Tutorial</h1>
+            <h1>Druga strana</h1>
 
             <div className="dugmebox">
                 <DugmeBox />
             </div>
         </div>
 
-
       </main>
-  )
+    )
 }
+export default Druga

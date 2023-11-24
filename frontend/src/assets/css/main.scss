@@ -6,8 +6,12 @@ main {
   background-color: #1e1e1e;
 
   .tekst {
+    min-width: 50%;
+    margin: 0 auto;
+    text-align: center;
+
     h1 {
-      color: darkorange;
-  }
+      color: #fdcb00;
+    }
   }
 }

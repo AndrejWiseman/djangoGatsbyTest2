@@ -11,6 +11,18 @@ def front(request):
     }
     return render(request, "index.html", context)
 
+def druga(request):
+    context = {
+
+    }
+    return render(request, "druga/index.html", context)
+
+def treca(request):
+    context = {
+
+    }
+    return render(request, "treca/index.html", context)
+
 
 
 class FilmViewSet(viewsets.ModelViewSet):

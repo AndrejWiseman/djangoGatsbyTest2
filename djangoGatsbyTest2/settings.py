@@ -75,7 +75,7 @@ ROOT_URLCONF = 'djangoGatsbyTest2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'frontend/public')]
+        'DIRS': [os.path.join(BASE_DIR, 'frontend/public/')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -141,14 +141,14 @@ USE_TZ = True
 
 # STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend', 'public', 'static')]
 
 # Base url to serve media files
 MEDIA_URL = '/images/'
 
 # Path where media is stored
-MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
+MEDIA_ROOT = os.path.join(BASE_DIR, '/images/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

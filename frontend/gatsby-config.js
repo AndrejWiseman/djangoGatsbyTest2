@@ -9,9 +9,42 @@
  */
 module.exports = {
   plugins: [
-      `gatsby-plugin-sass`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sass`,
 
 
-      
+      {
+          resolve: 'gatsby-source-graphql',
+            options: {
+              typeName: 'DJANGO',
+              fieldName: 'django',
+              url: 'http://127.0.0.1:8000/graphql',
+          },
+      },
+
+      {
+          resolve: `gatsby-source-filesystem`,
+          options: {
+            // The unique name for each instance
+            name: `images`,
+            // Path to the directory
+            path: `${__dirname}/src/assets/images/`,
+          },
+      },
+
+        {
+          resolve: `gatsby-source-filesystem`,
+          options: {
+            // The unique name for each instance
+            name: `media`,
+            // Path to the directory
+            path: `${__dirname}/../images/`,
+          },
+        },
+
+
+
   ],
 }

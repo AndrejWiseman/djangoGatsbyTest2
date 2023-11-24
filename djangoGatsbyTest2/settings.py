@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'graphene_django',
+
     # own
     'backend',
 
@@ -133,6 +135,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend', 'public', 'static')]
 
+# Base url to serve media files
+MEDIA_URL = '/images/'
+
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -148,5 +156,9 @@ REST_FRAMEWORK = {
          'rest_framework.renderers.JSONRenderer',
      )
  }
+
+GRAPHENE = {
+   "SCHEMA": "djangoGatsbyTest2.schema.schema"
+}
 
 

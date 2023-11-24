@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { graphql } from 'gatsby'
 
 import axios from "axios"
 
@@ -10,9 +9,9 @@ import DugmeBox from "../components/DugmeBox";
 
 const Druga = () => {
 
-    const [filmovi , setFilmovi] = useState(null)
+    const [filmovi , setFilmovi] = useState([])
 
-    // const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
 
     useEffect(() => {
@@ -47,34 +46,33 @@ const Druga = () => {
                 <DugmeBox />
             </div>
 
-            <ul>
+            {/*<ul>*/}
 
 
-                 { filmovi && filmovi.map(film => {
+                {/* { filmovi && filmovi.map(film => {*/}
 
-                    return(
-                        <li>{film.ime} - {film.godina}</li>
-                    )
+                {/*    return(*/}
+                {/*        <li>{film.ime} - {film.godina}</li>*/}
+                {/*    )*/}
 
-                    }
-                )}
+                {/*    }*/}
+                {/*)}*/}
 
 
-                {/*{ loading ? <p>Ucitava se...</p> : <ul>*/}
+                { loading ? <p>Ucitava se...</p> : <ul>
 
-                {/*    { filmovi && filmovi.map(film => {*/}
+                    { filmovi && filmovi.map(film => {
 
-                {/*        return(*/}
-                {/*            <li>{film.ime} - {film.godina}</li>*/}
-                {/*        )*/}
+                        return(
+                            <li>{film.ime} - {film.godina}</li>
+                        )
 
-                {/*        }*/}
-                {/*    )}*/}
-                {/*</ul>*/}
+                        }
+                    )}
+                </ul>
+                }
 
-                {/*}*/}
-
-            </ul>
+            {/*</ul>*/}
 
         </div>
 
@@ -82,15 +80,3 @@ const Druga = () => {
     )
 }
 export default Druga
-
-
-export const query = graphql`
-  query {
-    django {
-      allFilms {
-        ime
-        godina
-      }
-    }
-  }
-`

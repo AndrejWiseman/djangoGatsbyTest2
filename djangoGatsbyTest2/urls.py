@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 
-from django.template.defaulttags import url
+# from django.template.defaulttags import url
 
 from django.urls import path, include
 
@@ -12,7 +12,7 @@ from backend.views import front
 from backend.views import druga
 from backend.views import treca
 
-from backend.views import java_script
+# from backend.views import java_script
 
 import graphene
 from graphene_django.views import GraphQLView
@@ -32,7 +32,7 @@ urlpatterns = [
     path('graphql', csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema))),
 
 
-    url(r'.*\.js$', java_script),
+    # url(r'.*\.js$', java_script),
 
 ]
 

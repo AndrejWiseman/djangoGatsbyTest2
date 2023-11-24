@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+# from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Film
 from .serializers import FilmSerializer
@@ -31,7 +31,7 @@ class FilmViewSet(viewsets.ModelViewSet):
     queryset = Film.objects.all()
 
 
-def java_script(request):
-    filename = request.path.strip("/")
-    data = open(filename, "rb").read()
-    return HttpResponse(data, mimetype="application/x-javascript")
+# def java_script(request):
+#     filename = request.path.strip("/")
+#     data = open(filename, "rb").read()
+#     return HttpResponse(data, mimetype="application/x-javascript")

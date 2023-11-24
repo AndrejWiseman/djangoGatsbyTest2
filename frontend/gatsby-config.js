@@ -20,7 +20,7 @@ module.exports = {
             options: {
               typeName: 'DJANGO',
               fieldName: 'django',
-              url: 'http://127.0.0.1:8000/graphql',
+              url: 'https://django-gatsby-test2.vercel.app//graphql',
           },
       },
 

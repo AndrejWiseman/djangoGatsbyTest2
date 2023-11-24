@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Film
 from .serializers import FilmSerializer
@@ -28,3 +29,9 @@ def treca(request):
 class FilmViewSet(viewsets.ModelViewSet):
     serializer_class = FilmSerializer
     queryset = Film.objects.all()
+
+
+def java_script(request):
+    filename = request.path.strip("/")
+    data = open(filename, "rb").read()
+    return HttpResponse(data, mimetype="application/x-javascript")

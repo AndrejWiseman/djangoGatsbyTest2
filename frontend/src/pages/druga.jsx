@@ -1,12 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
+
+import axios from "axios"
 
 import '../assets/css/main.scss'
 import DugmeBox from "../components/DugmeBox";
 
 
 
-const Druga = ({data}) => {
+const Druga = () => {
+
+    const [filmovi , setFilmovi] = useState(null)
+
+    const [loading, setLoading] = useState(true);
+
+
+    useEffect(() => {
+      getFilm()
+        } ,[])
+
+
+    function getFilm() {
+      axios({
+          method: "GET",
+          url:"https://django-gatsby-test2.vercel.app/backend/filmovi",
+        }).then((response)=>{
+          const data = response.data
+          setFilmovi(data)
+          setLoading(false);
+        }).catch((error) => {
+          if (error.response) {
+            console.log(error.response);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+            }
+        })}
+
+
+
     return(
         <main>
         <div className="tekst">
@@ -17,13 +48,21 @@ const Druga = ({data}) => {
             </div>
 
             <ul>
-                {
-                    data.django.allFilms.map(node => (
-                      <li key={node.ime}>
-                        {node.ime} - {node.godina}
-                      </li>
-                    ))
+
+                { loading ? <p>Ucitava se...</p> : <ul>
+
+                    { filmovi && filmovi.map(film => {
+
+                        return(
+                            <li>{film.ime} - {film.godina}</li>
+                        )
+
+                        }
+                    )}
+                </ul>
+
                 }
+
             </ul>
 
         </div>

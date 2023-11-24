@@ -1,5 +1,5 @@
 const { createRemoteFileNode } = require('gatsby-source-filesystem');
-const IMAGE_PREFIX = 'https://django-gatsby-test2.vercel.app//images/';
+const IMAGE_PREFIX = 'https://django-gatsby-test2.vercel.app/images/';
 exports.createResolvers = async (
   {
     actions,

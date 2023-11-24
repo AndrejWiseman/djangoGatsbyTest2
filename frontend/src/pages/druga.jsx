@@ -12,7 +12,7 @@ const Druga = () => {
 
     const [filmovi , setFilmovi] = useState(null)
 
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
 
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const Druga = () => {
         }).then((response)=>{
           const data = response.data
           setFilmovi(data)
-          setLoading(false);
+          // setLoading(false);
         }).catch((error) => {
           if (error.response) {
             console.log(error.response);
@@ -49,19 +49,30 @@ const Druga = () => {
 
             <ul>
 
-                { loading ? <p>Ucitava se...</p> : <ul>
 
-                    { filmovi && filmovi.map(film => {
+                 { filmovi && filmovi.map(film => {
 
-                        return(
-                            <li>{film.ime} - {film.godina}</li>
-                        )
+                    return(
+                        <li>{film.ime} - {film.godina}</li>
+                    )
 
-                        }
-                    )}
-                </ul>
+                    }
+                )}
 
-                }
+
+                {/*{ loading ? <p>Ucitava se...</p> : <ul>*/}
+
+                {/*    { filmovi && filmovi.map(film => {*/}
+
+                {/*        return(*/}
+                {/*            <li>{film.ime} - {film.godina}</li>*/}
+                {/*        )*/}
+
+                {/*        }*/}
+                {/*    )}*/}
+                {/*</ul>*/}
+
+                {/*}*/}
 
             </ul>
 

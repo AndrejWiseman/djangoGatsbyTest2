@@ -27,13 +27,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9c!w*2vjqzpo(01a1r(-0iafw6q9e2w2%h!le2%pc#!sw=r(-9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     import mimetypes
     mimetypes.add_type("application/javascript", ".js", True)
 
-ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', '.now.sh', 'http://localhost:8001']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', '.now.sh', 'http://localhost:8001', 'http://127.0.0.1:8080']
 
 
 # Application definition

@@ -24,9 +24,10 @@ const Druga = () => {
           method: "GET",
           url:"https://django-gatsby-test2.vercel.app/backend/filmovi",
         }).then((response)=>{
-          const data = response.data
+          // const data = response.data
+          const data = response.data.results
           setFilmovi(data)
-          // setLoading(false);
+          setLoading(false);
         }).catch((error) => {
           if (error.response) {
             console.log(error.response);
@@ -61,10 +62,10 @@ const Druga = () => {
 
                 { loading ? <p>Ucitava se...</p> : <ul>
 
-                    { filmovi && filmovi.map(film => {
+                    { filmovi && filmovi.map((film, index) => {
 
                         return(
-                            <li>{film.ime} - {film.godina}</li>
+                            <li key={film.index}>{film.ime} - {film.godina}</li>
                         )
 
                         }

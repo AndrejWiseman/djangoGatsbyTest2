@@ -161,11 +161,11 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:8001',
 ]
 
-REST_FRAMEWORK = {
-     'DEFAULT_RENDERER_CLASSES': (
-         'rest_framework.renderers.JSONRenderer',
-     )
- }
+# REST_FRAMEWORK = {
+#      'DEFAULT_RENDERER_CLASSES': (
+#          'rest_framework.renderers.JSONRenderer',
+#      )
+#  }
 
 GRAPHENE = {
    "SCHEMA": "djangoGatsbyTest2.schema.schema"

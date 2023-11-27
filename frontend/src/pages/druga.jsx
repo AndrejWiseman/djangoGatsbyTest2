@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import DugmeBox from '../components/DugmeBox';
-import API from '../components/API';
-import '../assets/css/main.scss';
 
 const Druga = () => {
   const [filmovi, setFilmovi] = useState([]);
@@ -13,13 +10,15 @@ const Druga = () => {
   }, []);
 
   const getFilm = () => {
-    API.get('/')
-      .then((res) => {
-        setFilmovi(res.data);
+    axios.get('https://django-gatsby-test2.vercel.app/backend/filmovi')
+      .then((response) => {
+        const data = response.data.results;
+        setFilmovi(data);
         setLoading(false);
       })
       .catch((error) => {
-        console.error(error);
+        console.error('Error fetching filmovi:', error);
+        setLoading(false);
       });
   };
 
@@ -27,18 +26,13 @@ const Druga = () => {
     <main>
       <div className="tekst">
         <h1>Druga strana</h1>
-        <div className="dugmebox">
-          <DugmeBox />
-        </div>
 
         {loading ? (
           <p>Učitava se...</p>
         ) : (
           <ul>
             {filmovi.map((film, index) => (
-              <li key={index}>
-                {film.ime} - {film.godina}
-              </li>
+              <li key={index}>{film.ime} - {film.godina}</li>
             ))}
           </ul>
         )}
@@ -48,6 +42,7 @@ const Druga = () => {
 };
 
 export default Druga;
+
 
 
 
